@@ -1,0 +1,42 @@
+.ticker {
+  padding: 6px 0px 8px 0px;
+  margin-bottom: 60px;
+  gap: 24px;
+
+  text-transform: uppercase;
+  background-color: var(--color-red);
+  font-family: Right Grotesk;
+  font-size: 36px;
+  font-weight: 900;
+  line-height: 36px;
+  text-align: left;
+  color: var(--color-white);
+}
+.tickerItem {
+  display: flex;
+  gap: 24px;
+}
+.iconWrapper {
+  margin-top: 3px;
+}
+
+@media only screen and (min-width: 1440px) {
+  .ticker {
+    margin-bottom: 120px;
+    padding: 6x 0px 16px 0px;
+    gap: 36px;
+
+    font-size: 64px;
+    line-height: 64px;
+  }
+  .tickerItem {
+    display: flex;
+    gap: 36px;
+  }
+  .iconWrapper {
+    position: relative;
+    width: 36px;
+    height: 36px;
+    top: 17px;
+  }
+}
