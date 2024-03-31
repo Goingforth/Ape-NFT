@@ -33,6 +33,7 @@
   width: 148px;
   height: 183px;
   transform: rotate(-16deg);
+  left: 19px;
   top: -30px;
 }
 .blockNumber {
@@ -101,7 +102,7 @@
   .blockNumber {
     font-size: 16px;
     line-height: 27px;
-    margin-left: 30px;
+    margin-left: 27px;
   }
 
   .blockInfo {
@@ -134,7 +135,7 @@
   }
   .blockNumber {
     margin-right: 12px;
-    margin-left: 60px;
+    margin-left: 15px;
     font-size: 24px;
     line-height: 40px;
   }
@@ -156,7 +157,7 @@
     height: 283px;
 
     transform: rotate(-8deg);
-
+    left: 15px;
     top: -32px;
   }
 }
