@@ -1,4 +1,4 @@
-const data = [
+const dataArts = [
     "/slider/photo1.svg",
     "/slider/photo2.svg",
     "/slider/photo3.svg",
@@ -14,4 +14,4 @@ const data = [
     "/slider/photo13.svg",
     "/slider/photo14.svg",
 ];
-export default data;
+export default dataArts;

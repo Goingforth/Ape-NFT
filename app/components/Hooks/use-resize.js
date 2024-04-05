@@ -3,7 +3,7 @@ import { useState, useEffect } from 'react';
 import {
     SCREEN_TABLET, SCREEN_DESKTOP
 
-} from './const-breakpoints';
+} from '../../const/const-breakpoints';
 
 export const useResize = () => {
     const [width, setWidth] = useState(window.innerWidth);

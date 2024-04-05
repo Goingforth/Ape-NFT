@@ -1,7 +1,7 @@
 "use client";
 import React from "react";
 import styles from "./styles.module.css";
-import dataFAQ from "./const";
+import dataFAQ from "../../const/dataFAQ";
 import Image from "next/image";
 import { useResize } from "../Hooks/use-resize";
 import { nanoid } from "nanoid";
