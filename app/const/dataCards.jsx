@@ -28,7 +28,14 @@ const dataCards = [
         <p>Learn</p> <p>more</p> in mind map
       </>
     ),
-    info: <Image src={UpLeftArrow} fill alt='Picture of the up-left-arrow' />,
+    info: (
+      <Image
+        src={UpLeftArrow}
+        fill
+        alt='Picture of the up-left-arrow'
+        sizes='(min-width: 24px)'
+      />
+    ),
   },
 ];
 

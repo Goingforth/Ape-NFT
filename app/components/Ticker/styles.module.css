@@ -17,6 +17,9 @@
   gap: 24px;
 }
 .iconWrapper {
+  position: relative;
+  width: 36px;
+  height: 36px;
   margin-top: 3px;
 }
 
@@ -34,9 +37,6 @@
     gap: 36px;
   }
   .iconWrapper {
-    position: relative;
-    width: 36px;
-    height: 36px;
     top: 17px;
   }
 }

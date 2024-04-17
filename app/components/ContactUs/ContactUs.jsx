@@ -1,7 +1,9 @@
 "use client";
 import React from "react";
+import classNames from "classnames";
 import styles from "./styles.module.css";
-import addSharp from "../../image/icon/add-sharp.svg";
+import style from "../../page.module.css";
+import addSharp from "../../image/icon/add-sharp.png";
 import Image from "next/image";
 
 const ContactUs = () => {
@@ -22,8 +24,10 @@ const ContactUs = () => {
     alert("Ok");
   };
   return (
-    <section className={styles.container}>
-      <div className={styles.title}>Are you in?</div>
+    <section id='mint' className={styles.container}>
+      <div className={classNames(styles.title, style.titleComponent)}>
+        Are you in?
+      </div>
       <div className={styles.iconX}>
         <Image priority src={addSharp} alt='addSharp' />
       </div>

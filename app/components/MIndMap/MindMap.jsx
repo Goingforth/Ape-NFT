@@ -1,6 +1,8 @@
 "use client";
 import React from "react";
+import classNames from "classnames";
 import styles from "./styles.module.css";
+import style from "../../page.module.css";
 import { useState } from "react";
 import dataCards from "@/app/const/dataCards";
 import { nanoid } from "nanoid";
@@ -17,8 +19,11 @@ const MindMap = () => {
   const { title, info, isActive } = dataCards[currentCard];
 
   return (
-    <section className={styles.container}>
-      <div className={styles.title}>MIND MAP</div>
+    <section id='m-map' className={styles.container}>
+      <div className={classNames(styles.title, style.titleComponent)}>
+        MIND MAP
+      </div>
+
       {isMobile && (
         <CardMindMap
           key={nanoid()}

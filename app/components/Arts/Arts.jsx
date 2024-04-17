@@ -1,6 +1,8 @@
 "use client";
 import React from "react";
+import classNames from "classnames";
 import styles from "./styles.module.css";
+import style from "../../page.module.css";
 import { useState } from "react";
 import dataArts from "@/public/slider/data";
 import { nanoid } from "nanoid";
@@ -14,8 +16,10 @@ const Arts = () => {
   const { isMobile, isTablet, isDesktop } = useResize();
 
   return (
-    <section className={styles.container}>
-      <div className={styles.title}>COLLECTION</div>
+    <section id='arts' className={styles.container}>
+      <div className={classNames(styles.title, style.titleComponent)}>
+        COLLECTION
+      </div>
       {isMobile && (
         <ItemArts id={nanoid()} number={0} currentImage={currentImage} />
       )}

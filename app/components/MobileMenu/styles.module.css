@@ -1,0 +1,22 @@
+.menu {
+  position: absolute;
+  top: 294px;
+  left: 120px;
+  width: 120px;
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+
+  color: var(--color-white);
+  font-family: Messina Sans Mono;
+  font-size: 24px;
+  font-weight: 600;
+  line-height: 29px;
+  text-align: center;
+
+  list-style: none;
+}
+
+.menuItem:hover {
+  color: var(--color-red);
+}

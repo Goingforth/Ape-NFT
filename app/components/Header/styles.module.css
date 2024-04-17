@@ -1,0 +1,41 @@
+.header {
+  position: absolute;
+  z-index: 100;
+}
+.headerMenuOnMobile {
+  position: absolute;
+  z-index: 100;
+  width: 360px;
+  height: 100vh;
+  color: var(--color-white);
+  background-color: var(--color-black);
+}
+
+.logo {
+  position: absolute;
+  width: 48px;
+  height: 32px;
+  top: 16px;
+  left: 16px;
+}
+
+.footerMenuOn {
+  position: absolute;
+  bottom: 80px;
+}
+
+@media only screen and (min-width: 768px) and (max-width: 1439px) {
+  .logo {
+    top: 20px;
+    left: 28px;
+  }
+}
+
+@media only screen and (min-width: 1440px) {
+  .logo {
+    width: 72px;
+    height: 50px;
+    top: 39px;
+    left: 112px;
+  }
+}

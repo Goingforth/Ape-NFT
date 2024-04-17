@@ -1,6 +1,8 @@
 "use client";
 import React from "react";
+import classNames from "classnames";
 import styles from "./styles.module.css";
+import style from "../../page.module.css";
 import dataFAQ from "../../const/dataFAQ";
 import Image from "next/image";
 import { useResize } from "../Hooks/use-resize";
@@ -15,8 +17,8 @@ const FAQ = () => {
     setIsActive(serialNumber);
   };
   return (
-    <section className={styles.container}>
-      <div className={styles.title}>FAQ</div>
+    <section id='faq' className={styles.container}>
+      <div className={classNames(styles.title, style.titleComponent)}>FAQ</div>
       <div className={styles.mapFAQ}>
         {dataFAQ.map((item) => {
           const { serialNumber, image, question, answer } = item;

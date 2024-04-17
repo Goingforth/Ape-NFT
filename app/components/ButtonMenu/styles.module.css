@@ -1,0 +1,75 @@
+.buttonMenu {
+  width: 48px;
+  height: 48px;
+  /* border-radius: 8px; */
+  border: none;
+  color: var(--color-black);
+  background-color: var(--color-grey);
+
+  font-family: Messina Sans Mono;
+  font-size: 12px;
+  font-weight: 600;
+  line-height: 14px;
+  justify-content: center;
+  align-items: center;
+}
+
+.buttonMenuOn {
+  width: 48px;
+  height: 48px;
+  /* border-radius: 8px; */
+  border: none;
+  color: var(--color-white);
+  background-color: var(--color-white_light);
+
+  font-family: Messina Sans Mono;
+  font-size: 12px;
+  font-weight: 600;
+  line-height: 14px;
+  justify-content: center;
+  align-items: center;
+}
+.buttonMenu:hover {
+  color: var(--color-white);
+  fill: var(--color-white);
+  cursor: pointer;
+  text-decoration: underline;
+}
+.wrapper {
+  position: relative;
+  width: 16px;
+  height: 16px;
+  margin: auto;
+  color: var(--color-black);
+}
+.wrapper:hover {
+  color: var(--color-white);
+}
+.wrapperMenuOn {
+  position: relative;
+  width: 16px;
+  height: 16px;
+  margin: auto;
+  color: var(--color-white);
+}
+.wrapperMenuOn:hover {
+  color: var(--color-red);
+  cursor: pointer;
+}
+
+@media only screen and (min-width: 768px) {
+  .wrapper {
+    width: 24px;
+    height: 24px;
+  }
+}
+@media only screen and (min-width: 1440px) {
+  .buttonMenu {
+    width: 80px;
+    height: 80px;
+    /* border-radius: 12px; */
+
+    font-size: 16px;
+    line-height: 19px;
+  }
+}

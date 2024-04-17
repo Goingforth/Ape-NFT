@@ -1,0 +1,49 @@
+.container {
+  position: absolute;
+  top: 8px;
+  left: 296px;
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+.wrapper {
+  width: fit-content;
+  overflow: hidden;
+  border-radius: 8px;
+}
+
+.wrapperMenuOn {
+  overflow: hidden;
+  border-radius: 8px;
+}
+
+@media only screen and (min-width: 768px) and (max-width: 1439px) {
+  .container {
+    top: 12px;
+    left: 692px;
+  }
+  .wrapper {
+    border-radius: 12px;
+  }
+  .wrapperMenuOn {
+    overflow: hidden;
+    border-radius: 0px 12px 12px 0px;
+  }
+}
+
+@media only screen and (min-width: 1440px) {
+  .container {
+    position: absolute;
+    top: 24px;
+    left: 1242px;
+    gap: 16px;
+  }
+  .wrapper {
+    border-radius: 12px;
+  }
+  .wrapperMenuOn {
+    overflow: hidden;
+    border-radius: 0px 12px 12px 0px;
+  }
+}

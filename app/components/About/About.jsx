@@ -15,27 +15,37 @@ const About = () => {
   const { isMobile, isTablet, isDesktop } = useResize();
   return (
     <section>
-      <section className={styles.container}>
-        <div className={styles.title}>
-          a Story that started with
-          <span className={styles.titleSpan}>one simple ape</span>
-        </div>
-
+      <section id='about' className={styles.container}>
         {isMobile ? (
-          <div className={styles.infoFirst}>
-            <p>WHO GOT</p> <p>FED UP WITH BORING</p> <p>AND HYPOCRITIC</p>
-            <p>COMMONPLACE THIS IS</p> <p>HOW THE IDEA OF</p>
-            <p>ESCAPING AND DYNAMIC</p>
-            <p>JOURNEY ON THE YACHT</p>
-          </div>
+          <>
+            <div className={styles.title}>
+              a Story that started with
+              <span className={styles.titleSpan}>
+                one simple <p>ape</p>
+              </span>
+            </div>
+
+            <div className={styles.infoFirst}>
+              <p>WHO GOT</p> <p>FED UP WITH BORING</p> <p>AND HYPOCRITIC</p>
+              <p>COMMONPLACE THIS IS</p> <p>HOW THE IDEA OF</p>
+              <p>ESCAPING AND DYNAMIC</p>
+              <p>JOURNEY ON THE YACHT</p>
+            </div>
+          </>
         ) : (
-          <div className={styles.infoFirst}>
-            WHO GOT FED UP WITH BORING AND HYPOCRITIC COMMONPLACE THIS IS HOW
-            THE IDEA OF ESCAPING AND DYNAMIC JOURNEY ON THE <p>YACHT</p>
-          </div>
+          <>
+            <div className={styles.title}>
+              a Story that started with
+              <span className={styles.titleSpan}>one simple ape</span>
+            </div>
+            <div className={styles.infoFirst}>
+              WHO GOT FED UP WITH BORING AND HYPOCRITIC COMMONPLACE THIS IS HOW
+              THE IDEA OF ESCAPING AND DYNAMIC JOURNEY ON THE <p>YACHT</p>
+            </div>
+          </>
         )}
-        <div className={styles.iconX} style={{ width: "36", height: "36" }}>
-          <IconSharp width={isDesktop ? 36 : 24} height={isDesktop ? 36 : 24} />
+        <div className={styles.iconWrapper}>
+          <IconSharp />
         </div>
         <div className={styles.infoTwo}>
           EACH ARTWORK IN THE COLLECTION TELLS A STORY OF ONE JOURNEY. ARTS ARE
@@ -45,7 +55,7 @@ const About = () => {
         <Image
           priority
           src={isDesktop ? aboutDesktop : isMobile ? aboutMobile : aboutTablet}
-          alt='aboutMobile'
+          alt='aboutImage'
           className={styles.imageAbout}
         />
       </section>

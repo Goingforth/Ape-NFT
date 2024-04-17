@@ -7,12 +7,6 @@
 }
 .title {
   padding-bottom: 24px;
-
-  font-family: Right Grotesk;
-  font-size: 44px;
-  font-weight: 900;
-  line-height: 40px;
-  text-align: center;
 }
 .iconX {
   padding-bottom: 16px;
@@ -56,10 +50,6 @@
   }
   .title {
     padding: 0 197px 40px 198px;
-
-    font-size: 80px;
-    font-weight: 900;
-    line-height: 80px;
   }
   .iconX {
     padding-bottom: 24px;
@@ -84,9 +74,6 @@
   }
   .title {
     padding-bottom: 80px;
-
-    font-size: 160px;
-    line-height: 160px;
   }
   .iconX {
     padding-bottom: 40px;

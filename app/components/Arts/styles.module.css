@@ -9,12 +9,6 @@
 }
 .title {
   padding-bottom: 24px;
-
-  font-family: Right Grotesk;
-  font-size: 44px;
-  font-weight: 900;
-  line-height: 40px;
-  text-align: center;
 }
 .itemArts {
   max-width: 216px;
@@ -62,8 +56,6 @@
   }
   .title {
     padding-bottom: 40px;
-    font-size: 80px;
-    line-height: 80px;
   }
   .itemArts {
     max-width: 284px;
@@ -84,8 +76,6 @@
   }
   .title {
     padding-bottom: 80px;
-    font-size: 160px;
-    line-height: 160px;
   }
   .itemArts {
     width: 240px;

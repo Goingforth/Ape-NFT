@@ -6,6 +6,7 @@ import {
 } from '../../const/const-breakpoints';
 
 export const useResize = () => {
+
     const [width, setWidth] = useState(window.innerWidth);
 
     useEffect(() => {
