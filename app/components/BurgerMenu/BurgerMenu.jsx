@@ -1,25 +1,42 @@
 import React from "react";
-import ButtonSocialLink from "../ButtonSocialLink/ButtonSocialLink";
-import { discord, logoMarkBlue, logoX } from "../../image/burgerMenu/index";
+import ButtonHeader from "../ButtonHeader/ButtonHeader";
 import styles from "./styles.module.css";
-import ButtonMenu from "../ButtonMenu/ButtonMenu";
+import classNames from "classnames";
 import SocialLinks from "../SocialLinks/SocialLinks";
+import NavMenu from "../NavMenu/NavMenu";
 
 const BurgerMenu = ({ menuOn, setMenuOn, isMobile }) => {
   return (
-    <div className={styles.container}>
-      <div className={!menuOn ? styles.wrapper : styles.wrapperMenuOn}>
-        <ButtonMenu
-          menuOn={menuOn}
-          isMobile={isMobile}
-          onClick={() => {
-            menuOn ? setMenuOn(false) : setMenuOn(true);
-          }}
-          nameButton={menuOn ? "CLOSE" : "MENU"}
-        />
+    <>
+      <div style={{ display: "flex" }}>
+        {menuOn && (
+          <div className={isMobile ? styles.navMenuMobile : ""}>
+            <NavMenu isMobile={isMobile} setMenuOn={setMenuOn} />
+          </div>
+        )}
+
+        <div>
+          <div
+            className={
+              !isMobile && menuOn
+                ? classNames(styles.container, styles.borderMenuOn)
+                : styles.container
+            }
+          >
+            <ButtonHeader
+              menuOn={menuOn}
+              isMobile={isMobile}
+              name={menuOn ? "CLOSE" : "MENU"}
+              onClick={() => {
+                menuOn ? setMenuOn(false) : setMenuOn(true);
+              }}
+            />
+          </div>
+
+          <SocialLinks menuOn={menuOn} isMobile={isMobile} />
+        </div>
       </div>
-      <SocialLinks menuOn={menuOn} isMobile={isMobile} />
-    </div>
+    </>
   );
 };
 

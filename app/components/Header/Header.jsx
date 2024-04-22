@@ -1,40 +1,39 @@
 "use client";
 import React from "react";
-import Footer from "../Footer/Footer";
+import classNames from "classnames";
+import Link from "next/link";
+import BurgerMenu from "../BurgerMenu/BurgerMenu";
+
 import { useState } from "react";
 import { useResize } from "../Hooks/use-resize";
+import styles from "./styles.module.css";
 
 import { logo } from "../../image/logo/logo.jsx";
-import Link from "next/link";
-import styles from "./styles.module.css";
-import MobileMenu from "../MobileMenu/MobileMenu";
-import MenuNav from "../MenuNav/MenuNav";
-
-import BurgerMenu from "../BurgerMenu/BurgerMenu";
 
 const Header = () => {
   const [menuOn, setMenuOn] = useState(false);
-  const { isMobile, isTablet, isDesktop } = useResize();
-
+  const { isMobile} = useResize();
   return (
-    <section
+    <div
       id='#header'
-      className={menuOn && isMobile ? styles.headerMenuOnMobile : styles.header}
+      className={
+        menuOn && isMobile
+          ? classNames(styles.container, styles.headerMenuOnMobile)
+          : styles.container
+      }
     >
-      <Link className={styles.logo} href='/'>
-        {logo}
-      </Link>
-      <BurgerMenu menuOn={menuOn} setMenuOn={setMenuOn} isMobile={isMobile} />
-
-      {menuOn && isMobile && <MobileMenu setMenuOn={setMenuOn} />}
-      {menuOn && !isMobile && <MenuNav setMenuOn={setMenuOn} />}
-
+      <div style={{ display: "flex", justifyContent: "space-between" }}>
+        <Link className={styles.logo} href='/'>
+          {logo}
+        </Link>
+        <BurgerMenu menuOn={menuOn} setMenuOn={setMenuOn} isMobile={isMobile} />
+      </div>
       {menuOn && isMobile && (
-        <div className={styles.footerMenuOn}>
-          <Footer />
+        <div className={styles.copyRight}>
+          © Yacht ape 2024 all rights reserved
         </div>
       )}
-    </section>
+    </div>
   );
 };
 

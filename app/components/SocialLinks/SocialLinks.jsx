@@ -1,29 +1,33 @@
+"use client";
 import React from "react";
-import ButtonSocialLink from "../ButtonSocialLink/ButtonSocialLink";
+import { nanoid } from "nanoid";
+
+import ButtonHeader from "../ButtonHeader/ButtonHeader";
 import { discord, logoMarkBlue, logoX } from "../../image/burgerMenu/index";
 import styles from "./styles.module.css";
+
+const dataSocialLinks = [
+  { name: discord, link: "https://discord.com/" },
+  { name: logoMarkBlue, link: "https://youtube.com/" },
+  { name: logoX, link: "https://twitter.com/" },
+];
 
 const SocialLinks = ({ menuOn, isMobile }) => {
   return (
     <div className={styles.container}>
-      <ButtonSocialLink
-        menuOn={menuOn}
-        isMobile={isMobile}
-        icon={discord}
-        link='https://discord.com/'
-      />
-      <ButtonSocialLink
-        menuOn={menuOn}
-        isMobile={isMobile}
-        icon={logoMarkBlue}
-        link='https://youtube.com/'
-      />
-      <ButtonSocialLink
-        menuOn={menuOn}
-        isMobile={isMobile}
-        icon={logoX}
-        link='https://twitter.com/'
-      />
+      {dataSocialLinks.map(({ name, link }) => {
+        return (
+          <ButtonHeader
+            key={nanoid()}
+            name={name}
+            icon='true'
+            border='true'
+            onClick={() => (location.href = `${link}`)}
+            menuOn={menuOn}
+            isMobile={isMobile}
+          />
+        );
+      })}
     </div>
   );
 };

@@ -36,8 +36,14 @@ const ContactUs = () => {
         limited edition NFT
       </div>
       <form onSubmit={onSubmit} className={styles.form}>
-        <input id='username' type='text' name='username' />
-        <input id='address' type='text' name='address' />
+        <div>
+          <div></div>
+          <input id='username' type='text' name='username' />
+        </div>
+        <div>
+          <div></div>
+          <input id='address' type='text' name='address' />
+        </div>
         <button type='submit' className={styles.buttonSubmit}>
           MINT
         </button>
