@@ -41,7 +41,32 @@
   text-align: center;
 }
 .buttonSubmit:hover {
-  color: var(--color-button_hover);
+  color: var(--color-black);
+}
+.formItem {
+  display: flex;
+}
+.wrapperIcon {
+  width: 48px;
+  height: 48px;
+  padding: 12px;
+  border-radius: 8px 0px 0px 8px;
+  background-color: var(--color-black);
+}
+.formInput {
+  padding-left: 24px;
+  background-color: transparent;
+  border-radius: 0px 8px 8px 0px;
+
+  border: 1px solid var(--color-black);
+
+  font-family: Messina Sans Mono;
+  font-size: 12px;
+  font-weight: 400;
+  line-height: 14px;
+  text-align: left;
+  text-transform: uppercase;
+  color: rgba(255, 255, 255, 0.24);
 }
 
 @media only screen and (min-width: 768px) {
@@ -56,11 +81,10 @@
   }
   .textJoin {
     padding: 0 185px 24px 186px;
-    font-family: Messina Sans Mono;
+
     font-size: 16px;
-    font-weight: 400;
+
     line-height: 19px;
-    text-align: center;
   }
   .form {
     padding-left: 260px;
@@ -79,16 +103,31 @@
     padding-bottom: 40px;
   }
   .textJoin {
-    padding: 0 350px 40px 351px;
-    font-family: Messina Sans Mono;
+    padding: 0 430px 40px 430px;
+
     font-size: 24px;
-    font-weight: 400;
     line-height: 29px;
-    text-align: center;
   }
   .form {
     gap: 24px;
-    padding-left: 442px;
-    padding-right: 441px;
+    padding-left: 521px;
+    padding-right: 521px;
+  }
+  .wrapperIcon {
+    width: 64px;
+    height: 64px;
+    padding: 20px;
+  }
+  .formInput {
+    font-size: 16px;
+    line-height: 19px;
+  }
+  .buttonSubmit {
+    padding-top: 16px;
+    padding-bottom: 20px;
+    border-radius: 12px;
+
+    font-size: 28px;
+    line-height: 34px;
   }
 }

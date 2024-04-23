@@ -1,10 +1,12 @@
 "use client";
 import React from "react";
+import { useState } from "react";
 import classNames from "classnames";
 import styles from "./styles.module.css";
 import style from "../../page.module.css";
 import addSharp from "../../image/icon/add-sharp.png";
 import Image from "next/image";
+import { discordIcon, metalMask } from "@/app/image/icon";
 
 const ContactUs = () => {
   // async function onSubmit(event) {
@@ -20,6 +22,8 @@ const ContactUs = () => {
   //   const data = await response.json();
   //   // ...
   // }
+  const [username, setUsername] = useState();
+  const [address, setAddress] = useState();
   const onSubmit = () => {
     alert("Ok");
   };
@@ -36,13 +40,34 @@ const ContactUs = () => {
         limited edition NFT
       </div>
       <form onSubmit={onSubmit} className={styles.form}>
-        <div>
-          <div></div>
-          <input id='username' type='text' name='username' />
+        <div className={styles.formItem}>
+          <div className={styles.wrapperIcon}>
+            <Image src={discordIcon} alt='discord' width={24} height={24} />
+          </div>
+
+          <input
+            id='username'
+            type='text'
+            name='username'
+            value={username}
+            onChange={(e) => setUsername(e.target.value)}
+            placeholder='@username'
+            className={styles.formInput}
+          />
         </div>
-        <div>
-          <div></div>
-          <input id='address' type='text' name='address' />
+        <div className={styles.formItem}>
+          <div className={styles.wrapperIcon}>
+            <Image src={metalMask} alt='metalMask' width={24} height={24} />
+          </div>
+          <input
+            id='address'
+            type='text'
+            name='address'
+            value={address}
+            onChange={(e) => setAddress(e.target.value)}
+            placeholder='Wallet address'
+            className={styles.formInput}
+          />
         </div>
         <button type='submit' className={styles.buttonSubmit}>
           MINT
