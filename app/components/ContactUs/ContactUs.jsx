@@ -7,26 +7,17 @@ import style from "../../page.module.css";
 import addSharp from "../../image/icon/add-sharp.png";
 import Image from "next/image";
 import { discordIcon, metalMask } from "@/app/image/icon";
+import { useForm } from "react-hook-form";
 
 const ContactUs = () => {
-  // async function onSubmit(event) {
-  //   event.preventDefault();
+  const [minted, setMinted] = useState("MINT");
+  const {
+    register,
+    handleSubmit,
+    formState: { errors, isValid },
+    reset,
+  } = useForm({ mode: "onChange" });
 
-  //   const formData = new FormData(event.target);
-  //   const response = await fetch("/api/submit", {
-  //     method: "POST",
-  //     body: formData,
-  //   });
-
-  //   // Handle response if necessary
-  //   const data = await response.json();
-  //   // ...
-  // }
-  const [username, setUsername] = useState();
-  const [address, setAddress] = useState();
-  const onSubmit = () => {
-    alert("Ok");
-  };
   return (
     <section id='mint' className={styles.container}>
       <div className={classNames(styles.title, style.titleComponent)}>
@@ -39,38 +30,76 @@ const ContactUs = () => {
         Join the YACHT APE community to be one of the first to receive our
         limited edition NFT
       </div>
-      <form onSubmit={onSubmit} className={styles.form}>
+      <form
+        onSubmit={handleSubmit((data) => {
+          alert(JSON.stringify(data));
+
+          reset();
+        })}
+        className={styles.form}
+      >
         <div className={styles.formItem}>
           <div className={styles.wrapperIcon}>
             <Image src={discordIcon} alt='discord' width={24} height={24} />
           </div>
 
           <input
-            id='username'
-            type='text'
-            name='username'
-            value={username}
-            onChange={(e) => setUsername(e.target.value)}
+            {...register("userName", {
+              required: "Discord required",
+              pattern: { value: /^@[A-Z]+/, message: "Wrong discord" },
+            })}
             placeholder='@username'
-            className={styles.formInput}
+            className={
+              isValid
+                ? classNames(styles.formInput, styles.borderIsValid)
+                : errors?.userName
+                ? classNames(styles.formInput, styles.borderError)
+                : styles.formInput
+            }
           />
+        </div>
+        <div className={styles.errorsMessage}>
+          {errors?.userName && <p>{errors.userName.message}</p>}
         </div>
         <div className={styles.formItem}>
           <div className={styles.wrapperIcon}>
             <Image src={metalMask} alt='metalMask' width={24} height={24} />
           </div>
           <input
-            id='address'
-            type='text'
-            name='address'
-            value={address}
-            onChange={(e) => setAddress(e.target.value)}
+            {...register("address", {
+              required: "Address required",
+              pattern: {
+                value: /^1X[A-Z0-9\S]{10}$/,
+                message: "Wrong address",
+              },
+              minLength: {
+                value: 10,
+                message: "Min length 10 symbol",
+              },
+            })}
             placeholder='Wallet address'
-            className={styles.formInput}
+            className={
+              isValid
+                ? classNames(styles.formInput, styles.borderIsValid)
+                : errors?.address
+                ? classNames(styles.formInput, styles.borderError)
+                : styles.formInput
+            }
           />
         </div>
-        <button type='submit' className={styles.buttonSubmit}>
-          MINT
+        <div className={styles.errorsMessage}>
+          {errors?.address && <p>{errors.address.message}</p>}
+        </div>
+        <button
+          type='submit'
+          disabled={!isValid}
+          className={styles.buttonSubmit}
+        >
+          {Object.keys(errors).length !== 0
+            ? "ERROR"
+            : isValid
+            ? "MINTED"
+            : "MINT"}
         </button>
       </form>
     </section>
