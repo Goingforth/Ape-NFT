@@ -11,8 +11,8 @@
   padding-bottom: 24px;
 }
 .itemArts {
-  max-width: 216px;
-  max-height: 256px;
+  width: 216px;
+  height: 256px;
 
   margin-bottom: 24px;
 }
@@ -58,8 +58,8 @@
     padding-bottom: 40px;
   }
   .itemArts {
-    max-width: 284px;
-    max-height: 336px;
+    width: 284px;
+    height: 336px;
   }
   .blockButtoms {
     display: flex;
