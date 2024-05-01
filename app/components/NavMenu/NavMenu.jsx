@@ -27,6 +27,7 @@ const NavMenu = ({ setMenuOn, isMobile }) => {
         <div className={styles.navMenu}>
           {dataNav.map(({ name, ref }) => (
             <ButtonHeader
+              key={nanoid()}
               name={name}
               onClick={() => {
                 setMenuOn(false);

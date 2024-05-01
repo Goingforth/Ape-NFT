@@ -4,7 +4,7 @@ import addSharp from "../../image/icon/add-sharp.png";
 
 const IconSharp = () => {
   return (
-    <div>
+    <>
       <Image
         priority
         src={addSharp}
@@ -12,7 +12,7 @@ const IconSharp = () => {
         fill
         sizes='(min-width: 24px)'
       />
-    </div>
+    </>
   );
 };
 

@@ -1,16 +1,14 @@
 "use client";
 import React from "react";
-import { useState } from "react";
 import classNames from "classnames";
 import styles from "./styles.module.css";
 import style from "../../page.module.css";
-import addSharp from "../../image/icon/add-sharp.png";
 import Image from "next/image";
 import { discordIcon, metalMask } from "@/app/image/icon";
 import { useForm } from "react-hook-form";
+import IconSharp from "../IconSharp/IconSharp";
 
 const ContactUs = () => {
-  const [minted, setMinted] = useState("MINT");
   const {
     register,
     handleSubmit,
@@ -24,7 +22,7 @@ const ContactUs = () => {
         Are you in?
       </div>
       <div className={styles.iconX}>
-        <Image priority src={addSharp} alt='addSharp' />
+        <IconSharp />
       </div>
       <div className={styles.textJoin}>
         Join the YACHT APE community to be one of the first to receive our
@@ -46,9 +44,10 @@ const ContactUs = () => {
           <input
             {...register("userName", {
               required: "Discord required",
-              pattern: { value: /^@[A-Z]+/, message: "Wrong discord" },
+              pattern: { value: /^@[A-Za-z]+/, message: "Wrong discord" },
             })}
             placeholder='@username'
+            autoComplete='off'
             className={
               isValid
                 ? classNames(styles.formInput, styles.borderIsValid)
@@ -69,7 +68,7 @@ const ContactUs = () => {
             {...register("address", {
               required: "Address required",
               pattern: {
-                value: /^1X[A-Z0-9\S]{10}$/,
+                value: /^1X[A-Za-z0-9\S]{8}$/,
                 message: "Wrong address",
               },
               minLength: {
@@ -78,6 +77,7 @@ const ContactUs = () => {
               },
             })}
             placeholder='Wallet address'
+            autoComplete='off'
             className={
               isValid
                 ? classNames(styles.formInput, styles.borderIsValid)

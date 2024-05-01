@@ -12,7 +12,7 @@ import { logo } from "../../image/logo/logo.jsx";
 
 const Header = () => {
   const [menuOn, setMenuOn] = useState(false);
-  const { isMobile} = useResize();
+  const { isMobile } = useResize();
   return (
     <div
       id='#header'

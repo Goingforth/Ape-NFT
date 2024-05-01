@@ -15,41 +15,42 @@ import { Card0, Card1, Card2, Card3 } from "./CardsMindMap";
 const MindMap = () => {
   const [currentCard, setCurrentCard] = useState(0);
 
-  const { isMobile } = useResize();
-  const { title, info, isActive } = dataCards[currentCard];
+    const { isMobile } = useResize();
 
-  return (
-    <section id='m-map' className={styles.container}>
-      <div className={classNames(styles.title, style.titleComponent)}>
-        MIND MAP
-      </div>
+    const { title, info, isActive } = dataCards[currentCard];
 
-      {isMobile && (
-        <CardMindMap
-          key={nanoid()}
-          title={title}
-          info={info}
-          isActive={isActive}
-        />
-      )}
-      {!isMobile && (
-        <div className={styles.mediaQuery}>
-          <Card0 />
-          <Card1 />
-          <Card2 />
-          <Card3 />
+    return (
+      <section id='m-map' className={styles.container}>
+        <div className={classNames(styles.title, style.titleComponent)}>
+          MIND MAP
         </div>
-      )}
 
-      {isMobile && (
-        <BlockButtons
-          current={currentCard}
-          setCurrent={setCurrentCard}
-          length={dataCards.length}
-        />
-      )}
-    </section>
-  );
-};
+        {isMobile && (
+          <CardMindMap
+            key={nanoid()}
+            title={title}
+            info={info}
+            isActive={isActive}
+          />
+        )}
+        {!isMobile && (
+          <div className={styles.mediaQuery}>
+            <Card0 />
+            <Card1 />
+            <Card2 />
+            <Card3 />
+          </div>
+        )}
+
+        {isMobile && (
+          <BlockButtons
+            current={currentCard}
+            setCurrent={setCurrentCard}
+            length={dataCards.length}
+          />
+        )}
+      </section>
+    );
+  }
 
 export default MindMap;

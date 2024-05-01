@@ -1,5 +1,6 @@
 "use client";
 import React from "react";
+
 import Image from "next/image";
 
 import styles from "./styles.module.css";
@@ -10,6 +11,7 @@ import Header from "../Header/Header";
 
 const Hero = () => {
   const { isMobile, isTablet, isDesktop } = useResize();
+
   return (
     <section className={styles.container}>
       <Header />
